@@ -13,8 +13,8 @@ class Main {
     private static float       c = 700;             //efektywne cieplo wlasciwe
     private static float       k = 25;              //wsp. przewodzenia ciepla (thermalConductivity)
     private static float       ro = 7800;           //gestosc materialu
-    private static float       numberOfElements = 5;
-    private static float       numberOfNodes = 6;   // (noe+1)
+    private static float       numberOfElements = 3;
+    private static float       numberOfNodes = 4;   // (noe+1)
 
 
 
@@ -22,14 +22,14 @@ class Main {
 
         System.out.println("input data fill:");
 
-        Grid grid = new Grid((int)numberOfElements, (float)radiusMin, deltaRadius, deltaTime,
+        FEMGrid FEMGrid = new FEMGrid((int)numberOfElements, (float)radiusMin, deltaRadius, deltaTime,
                                 k, ro, c);
 
 
-        grid.instantiateLocalMatrix();
-        grid.printLocalMatrix();
-        grid.calculateLocalMatrix();
-        grid.printLocalMatrix();
+        FEMGrid.instantiateLocalMatrix();
+        FEMGrid.printLocalMatrix();
+        FEMGrid.calculateLocalMatrix();
+        FEMGrid.printLocalMatrix();
 
     }
 

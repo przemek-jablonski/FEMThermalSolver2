@@ -59,11 +59,11 @@ class FEMGrid {
         w2 = 1;
 
 
-        Ni1 =  (float)0.5 * (1-ksi1);
-        Ni2 =  (float)0.5 * (1-ksi2);
+        Ni1 =  (float)(0.5 * (1-ksi1));
+        Ni2 =  (float)(0.5 * (1-ksi2));
 
-        Nj1 =  (float)0.5 * (1+ksi1);
-        Nj2 =  (float)0.5 * (1+ksi2);
+        Nj1 =  (float)(0.5 * (1+ksi1));
+        Nj2 =  (float)(0.5 * (1+ksi2));
     }
 
 
@@ -80,40 +80,19 @@ class FEMGrid {
     public void calculateLocalMatrix() {
 
         /** for p=1 (point i) */
-        double rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaTime);
+        double rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaRadius);
 
         /** for p=2 (point j) */
-        double rp2 = Ni2 * radiusStart + Nj2 * (radiusStart + deltaTime);
+        double rp2 = Ni2 * radiusStart + Nj2 * (radiusStart + deltaRadius);
 
         /** calculating cells in local matrix for K-element (kElementMatrix) */
-        kElementMatrix[0][0] = (((k / deltaRadius)) * ((rp1* w1)+(rp2* w2)))
+        kElementMatrix[0][0] = ((k / deltaRadius) * ((rp1*w1)+(rp2*w2)))
                 + (((c * ro * deltaRadius)/deltaTime) * ((Ni1*Ni1*rp1* w1)+(Ni2*Ni2*rp2* w2)));
 
 
 
-
-        int weight1 = 1;
-        int weight2 = weight1;
-        float ksi1 = -0.57735f;
-        float ksi2 =  0.57735f;
-
-        float Ni1 = 1 - ksi1;
-        float Nj1 = 1 + ksi1;
-        float Ni2 = 1 - ksi2;
-        float Nj2 = 1 + ksi2;
-
-        double rp = (ksi1 * radiusStart) * weight1 + (ksi2 * (radiusStart + deltaRadius)) * weight2;
-
-        kElementMatrix[0][0] = (float)
-                ( (k / deltaRadius) * rp
-                + (c * ro * deltaRadius / deltaTime) *  (Ni1 * rp + Ni2 * rp) * weight1 + (Ni1 * rp + Ni2 * rp) * weight2);
-
-        kElementMatrix[0][1] = (float)
-                (-(k / deltaRadius) * rp + (c * ro * deltaRadius / deltaTime) *
-                (Ni1 * rp + Ni2 * rp) * weight1 + (Ni2 * rp + Nj1 * rp) * weight2);
-
-
         printLocalMatrix();
+
 
     }
 

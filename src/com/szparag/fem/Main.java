@@ -19,35 +19,19 @@ class Main {
 
 
     public static void main(String[] args) {
+
         System.out.println("input data fill:");
+
         Grid grid = new Grid((int)numberOfElements, (float)radiusMin, deltaRadius, deltaTime,
                                 k, ro, c);
+
+
         grid.instantiateLocalMatrix();
         grid.printLocalMatrix();
         grid.calculateLocalMatrix();
         grid.printLocalMatrix();
-    }
-
-    /*
-    private static void inputDataFill(double rmin, double rmax, double deltar,
-                               float aAir, float tStart, float tAir,
-                               float timeMax, float deltaTime,
-                               float c, float k, float ro, float noe, float non) {
-        radiusMin = rmin;
-        radiusMax = rmax;
-        deltaRadius = deltar;
-        alphaAir = aAir;
-        temperatureStart = tStart;
-        temperatureAir = tAir;
-        this.timeMax = timeMax;
-        this.deltaTime = deltaTime;
-        this.c = c;
-        this.k = k;
-        this.ro = ro;
-        this.numberOfElements = noe;
-        this.numberOfNodes = non;
 
     }
-    */
+
 
 }

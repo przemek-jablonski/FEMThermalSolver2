@@ -35,12 +35,8 @@ class Grid {
                 element = 0;
     }
 
-    public void instantiateGlobalMatrix() {
-        // TODO
-    }
 
     public void calculateLocalMatrix() {
-        // na razie niech to bedzie element 0 (nodesy 0 i 1)
 
         int weight1 = 1;
         int weight2 = weight1;
@@ -48,25 +44,30 @@ class Grid {
         float ksi2 =  0.57735f;
 
         float Ni1 = 1 - ksi1;
-        float Ni2 = 1 - ksi2;
         float Nj1 = 1 + ksi1;
+        float Ni2 = 1 - ksi2;
         float Nj2 = 1 + ksi2;
 
         double rp = (ksi1 * radiusStart) * weight1 + (ksi2 * (radiusStart + deltaRadius)) * weight2;
+/*
+        localMatrix[0][0] = (float)((k / deltaRadius) * rp
+                + (c * ro * deltaRadius / deltaTime) *
+                (Ni1 * rp + Ni2 * rp) * weight1 + (Ni1 * rp + Ni2 * rp) * weight2);
 
-        localMatrix[0][0] = (float)((k / deltaRadius) * rp
+        localMatrix[0][1] = (float)(-(k / deltaRadius) * rp
                 + (c * ro * deltaRadius / deltaTime) *
-                (Ni1 * rp + Ni2 * rp) * weight1 + (Ni1 * rp + Ni2 * rp) * weight2);
-        /*
-        localMatrix[0][0] = (float)((k / deltaRadius) * rp
-                + (c * ro * deltaRadius / deltaTime) *
-                (Ni1 * rp + Ni2 * rp) * weight1 + (Ni1 * rp + Ni2 * rp) * weight2);
+                (Ni2 * rp + Nj1 * rp) * weight1 + (Ni2 * rp + Nj1 * rp) * weight2);
 */
-
 
         printLocalMatrix();
 
     }
+
+
+    public void instantiateGlobalMatrix() {
+        // TODO
+    }
+
 
     public void printLocalMatrix() {
         System.out.println("Local Matrix:");

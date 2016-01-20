@@ -1,5 +1,7 @@
 package com.szparag.fem;
 
+import sun.awt.image.ImageWatched;
+
 import java.util.LinkedList;
 
 class Main {
@@ -12,49 +14,33 @@ class Main {
     private static float       temperatureAir = 200;
     private static float       timeMax = 200;
     private static float       deltaTime = 50;
-    private static float       c = 700;             //efektywne cieplo wlasciwe
-    private static float       k = 25;              //wsp. przewodzenia ciepla (thermalConductivity)
-    private static float       ro = 7800;           //gestosc materialu
-    private static float       numberOfElements = 3;
-    private static float       numberOfNodes = 4;   // (noe+1)
+    private static float       c = 700;
+    private static float       k = 25;
+    private static float       ro = 7800;
 
 
 
     public static void main(String[] args) {
 
-        System.out.println("input data fill:");
 
-        FEMGrid FEMGrid = new FEMGrid((int)numberOfElements, (float)radiusMin, deltaRadius, deltaTime,
-                                k, ro, c, temperatureStart,
-                                alphaAir, radiusMax, temperatureAir);
+        LinkedList<Node> nodes = new LinkedList<Node>();
+        for (float radius = (float)radiusMin; radius < radiusMax; radius += deltaRadius )
+            nodes.add(new Node());
 
-/**
-        FEMGrid.instantiateLocalMatrix();
-        FEMGrid.instantiateLocalVector();
-        FEMGrid.calculateLocalMatrix();
-        FEMGrid.calculateLocalVector();
-*/
 
-        /**                 */
 
-        Node node1 = new Node();
-        Node node2 = new Node();
-        Node node3 = new Node();
-        Node node4 = new Node();
+        LinkedList<FiniteElement> elements = new LinkedList<FiniteElement>();
+        for (int i =0; i < nodes.size()-1; ++i)
+            elements.add(new FiniteElement(nodes.get(i), nodes.get(i+1)));
+        //todo dodac warunki brzegowe!
 
-        FiniteElement element1 = new FiniteElement(node1, node2);
-        FiniteElement element2 = new FiniteElement(node2, node3);
-        FiniteElement element3 = new FiniteElement(node3, node4);
 
-        LinkedList<FiniteElement> list = new LinkedList<FiniteElement>();
-        list.add(element1);
-        list.add(element2);
-        list.add(element3);
 
-        FiniteElementsGrid grid = new FiniteElementsGrid(list);
-        grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime);
-        grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro, deltaTime, temperatureStart);
+        FiniteElementsGrid grid = new FiniteElementsGrid(elements, (float)radiusMax, (float)deltaRadius);
 
+        grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime, alphaAir);
+        grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,
+                        deltaTime, temperatureStart, alphaAir, temperatureAir);
 
 
     }

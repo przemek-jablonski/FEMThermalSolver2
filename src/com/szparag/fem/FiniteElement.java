@@ -67,7 +67,6 @@ public class FiniteElement {
         w1 = 1;
         w2 = 1;
 
-
         Ni1 =  (float)(0.5 * (1-ksi1));
         Ni2 =  (float)(0.5 * (1-ksi2));
 
@@ -96,7 +95,6 @@ public class FiniteElement {
         kLocalMatrix[1][1] = ((k/deltaRadius) * ((rp1*w1)+(rp2*w2)))
                 + ( (c*ro*deltaRadius/deltaTime) * ((Nj1*Nj1*rp1*w1)+(Nj2*Nj2*rp2*w2)));
 
-        print(kLocalMatrix, "localmatrix");
     }
 
 
@@ -111,14 +109,28 @@ public class FiniteElement {
                 ((Ni1*temperatureStart+Nj1*temperatureStart)*Nj1*rp1*w1) +
                         (Ni2*temperatureStart+Nj2*temperatureStart)*Nj2*rp2*w2);
 
+    }
 
-        // fElementVector[1][0] -= (2*alpha*radiusMax*temperatureAir);
+    public void addBoundaryConditionsMatrix(float alpha, float radiusMax) {
+        kLocalMatrix[1][1] += 2 * alpha * radiusMax;
+    }
 
-        print(fLocalVector, "localvector");
+    public void addBoundaryConditionsVector(float alpha, float radiusMax, float temperatureAir){
+        fLocalVector[1][0] -= 2*alpha*radiusMax*temperatureAir;
     }
 
 
-    public void print(float[][] array, String id) {
+    /**
+     * printing methods
+     */
+
+    public void printMatrix() { print(kLocalMatrix, "kLocalMatrix"); }
+
+    public void printVector() { print(fLocalVector, "fLocalVector"); }
+
+
+
+    private void print(float[][] array, String id) {
         System.out.println("print (" + id + "): ");
         for(float[] row : array) {
             System.out.print("|");

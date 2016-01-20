@@ -64,18 +64,18 @@ class FEMGrid {
     }
 
     private void generateCalculationParameters() {
-        ksi1 = -0.57735f;
-        ksi2 =  0.57735f;
-
-        w1 = 1;
-        w2 = 1;
-
-
-        Ni1 =  (float)(0.5 * (1-ksi1));
-        Ni2 =  (float)(0.5 * (1-ksi2));
-
-        Nj1 =  (float)(0.5 * (1+ksi1));
-        Nj2 =  (float)(0.5 * (1+ksi2));
+//        ksi1 = -0.57735f;
+//        ksi2 =  0.57735f;
+//
+//        w1 = 1;
+//        w2 = 1;
+//
+//
+//        Ni1 =  (float)(0.5 * (1-ksi1));
+//        Ni2 =  (float)(0.5 * (1-ksi2));
+//
+//        Nj1 =  (float)(0.5 * (1+ksi1));
+//        Nj2 =  (float)(0.5 * (1+ksi2));
     }
 
 

@@ -13,10 +13,6 @@ public class FiniteElementsGrid {
     private LinkedList<FiniteElement>   elements;
     private LinkedList<Node>            nodes;
 
-
-    private float       radiusMax;
-    private float       deltaRadius;
-
     /**
      *  globally gathered matrixes from elements
      */
@@ -36,7 +32,7 @@ public class FiniteElementsGrid {
      * calculation methods
      */
 
-    public void calculateLocalMatrixes(float radiusStart, float deltaRadius, float k, float c, float ro,
+    public void calculateLocalMatrixes(float radiusStart, float deltaRadius, float radiusMax, float k, float c, float ro,
                                        float deltaTime, float alpha) {
         float localRadiusStart = radiusStart;
         for (FiniteElement element : elements) {
@@ -53,7 +49,7 @@ public class FiniteElementsGrid {
     }
 
 
-    public void calculateLocalVectors(float radiusStart, float deltaRadius, float c, float ro,
+    public void calculateLocalVectors(float radiusStart, float deltaRadius, float radiusMax, float c, float ro,
                                       float deltaTime, float alpha, float temperatureAir) {
 
         float localRadiusStart = radiusStart;

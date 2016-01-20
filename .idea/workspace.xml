@@ -22,17 +22,17 @@
     <favorites_list name="FEMThermalSolver2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41379312">
+    <splitter split-orientation="horizontal" split-proportion="0.45747125">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="FiniteElementsGrid.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.62630963">
-                  <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.7008149">
+                  <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
                   <folding>
-                    <element signature="e#5636#5637#0" expanded="true" />
-                    <element signature="e#5667#5668#0" expanded="true" />
+                    <element signature="e#5596#5597#0" expanded="true" />
+                    <element signature="e#5627#5628#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -55,11 +55,11 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.1082654">
-                  <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+                <state vertical-scroll-proportion="0.6251455">
+                  <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
                   <folding>
-                    <element signature="e#767#773#0" expanded="true" />
-                    <element signature="e#1097#1112#0" expanded="true" />
+                    <element signature="e#769#775#0" expanded="true" />
+                    <element signature="e#1099#1114#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -69,16 +69,16 @@
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+                  <caret line="141" column="27" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
                   <folding>
-                    <element signature="e#5609#5610#0" expanded="true" />
-                    <element signature="e#5637#5638#0" expanded="true" />
-                    <element signature="e#5667#5668#0" expanded="true" />
-                    <element signature="e#5695#5696#0" expanded="true" />
-                    <element signature="e#5737#5738#0" expanded="true" />
-                    <element signature="e#5772#5773#0" expanded="true" />
-                    <element signature="e#5814#5815#0" expanded="true" />
-                    <element signature="e#5849#5850#0" expanded="true" />
+                    <element signature="e#5707#5708#0" expanded="true" />
+                    <element signature="e#5735#5736#0" expanded="true" />
+                    <element signature="e#5765#5766#0" expanded="true" />
+                    <element signature="e#5793#5794#0" expanded="true" />
+                    <element signature="e#5835#5836#0" expanded="true" />
+                    <element signature="e#5870#5871#0" expanded="true" />
+                    <element signature="e#5912#5913#0" expanded="true" />
+                    <element signature="e#5947#5948#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -106,9 +106,9 @@
         <option value="$PROJECT_DIR$/src/com/szparag/fem/Grid.java" />
         <option value="$PROJECT_DIR$/src/com/szparag/fem/FEMGrid.java" />
         <option value="$PROJECT_DIR$/src/com/szparag/fem/Node.java" />
+        <option value="$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java" />
         <option value="$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java" />
         <option value="$PROJECT_DIR$/src/com/szparag/fem/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java" />
       </list>
     </option>
   </component>
@@ -118,8 +118,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1519" />
-    <option name="y" value="-199" />
+    <option name="x" value="1493" />
+    <option name="y" value="-200" />
     <option name="width" value="1782" />
     <option name="height" value="1005" />
   </component>
@@ -641,12 +641,12 @@
       <updated>1452766903003</updated>
       <workItem from="1452766905643" duration="5369000" />
       <workItem from="1453107375277" duration="92000" />
-      <workItem from="1453240590343" duration="27366000" />
+      <workItem from="1453240590343" duration="28693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32827000" />
+    <option name="totallyTimeSpent" value="34154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -658,17 +658,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1519" y="-199" width="1782" height="1005" extended-state="0" />
+    <frame x="1493" y="-200" width="1782" height="1005" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33032694" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.41375422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.39007893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.19010727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -692,7 +692,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -706,8 +706,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
-            <element signature="e#767#773#0" expanded="true" />
-            <element signature="e#1097#1112#0" expanded="true" />
+            <element signature="e#769#775#0" expanded="true" />
+            <element signature="e#1099#1114#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -717,8 +717,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
-            <element signature="e#767#773#0" expanded="true" />
-            <element signature="e#1097#1112#0" expanded="true" />
+            <element signature="e#769#775#0" expanded="true" />
+            <element signature="e#1099#1114#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -733,11 +733,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62630963">
-          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.7008149">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
-            <element signature="e#5636#5637#0" expanded="true" />
-            <element signature="e#5667#5668#0" expanded="true" />
+            <element signature="e#5596#5597#0" expanded="true" />
+            <element signature="e#5627#5628#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -745,27 +745,27 @@
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <caret line="141" column="27" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
           <folding>
-            <element signature="e#5609#5610#0" expanded="true" />
-            <element signature="e#5637#5638#0" expanded="true" />
-            <element signature="e#5667#5668#0" expanded="true" />
-            <element signature="e#5695#5696#0" expanded="true" />
-            <element signature="e#5737#5738#0" expanded="true" />
-            <element signature="e#5772#5773#0" expanded="true" />
-            <element signature="e#5814#5815#0" expanded="true" />
-            <element signature="e#5849#5850#0" expanded="true" />
+            <element signature="e#5707#5708#0" expanded="true" />
+            <element signature="e#5735#5736#0" expanded="true" />
+            <element signature="e#5765#5766#0" expanded="true" />
+            <element signature="e#5793#5794#0" expanded="true" />
+            <element signature="e#5835#5836#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
+            <element signature="e#5912#5913#0" expanded="true" />
+            <element signature="e#5947#5948#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1082654">
-          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.6251455">
+          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
           <folding>
-            <element signature="e#767#773#0" expanded="true" />
-            <element signature="e#1097#1112#0" expanded="true" />
+            <element signature="e#769#775#0" expanded="true" />
+            <element signature="e#1099#1114#0" expanded="true" />
           </folding>
         </state>
       </provider>

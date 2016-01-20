@@ -9,9 +9,11 @@ class Main {
     private static double      radiusMin = 0;
     private static double      radiusMax = 0.08;
     private static double      deltaRadius = 0.01;
+
     private static float       alphaAir = 300;
-    private static float       temperatureStart = 100;
     private static float       temperatureAir = 200;
+    private static float       temperatureStart = 100;
+
     private static float       timeMax = 200;
     private static float       deltaTime = 50;
     private static float       c = 700;
@@ -43,18 +45,18 @@ class Main {
         FiniteElementsGrid grid = new FiniteElementsGrid(elements, nodes, (float)radiusMax, (float)deltaRadius);
         grid.printTemperatures("starting temps:");
 
-/*
+
         System.out.println("TIMESTEPS:--------------------------------------------------------");
         System.out.println("STARTING TIMESTEP:--------------------------------------------------------");
-        grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime, alphaAir);
-        grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,
+        grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, (float)radiusMax, k, c, ro, deltaTime, alphaAir);
+        grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, (float)radiusMax, c, ro,
                         deltaTime, alphaAir, temperatureAir);
 
         grid.generateGlobalMatrix();
         grid.generateGlobalVector();
         grid.calculateTemperatures();
 
-*/
+
         /**
          * optimal timestep calculation
          */
@@ -67,9 +69,9 @@ class Main {
 
         System.out.println("TIMESTEPS:--------------------------------------------------------");
         for (int count = 1; count <300; ++count) {
-            System.out.println("TIMESTEP " + "count" + ". -------------------------------------------------------------");
-            grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime, alphaAir);
-            grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,
+            System.out.println("TIMESTEP " + count + ". -------------------------------------------------------------");
+            grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, (float)radiusMax, k, c, ro, deltaTime, alphaAir);
+            grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, (float)radiusMax, c, ro,
                     deltaTime, alphaAir, temperatureAir);
             grid.generateGlobalMatrix();
             grid.generateGlobalVector();

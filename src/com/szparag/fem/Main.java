@@ -43,6 +43,7 @@ class Main {
 
         grid.generateGlobalMatrix();
         grid.generateGlobalVector();
+        grid.calculateTemperatures();
 
     }
 

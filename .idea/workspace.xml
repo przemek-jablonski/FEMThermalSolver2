@@ -27,8 +27,8 @@
                 <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state vertical-scroll-proportion="0.7298578">
-                        <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+                      <state vertical-scroll-proportion="0.8459716">
+                        <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                         <folding>
                           <element signature="e#718#724#0" expanded="true" />
                           <element signature="e#915#930#0" expanded="true" />
@@ -44,8 +44,8 @@
                 <file leaf-file-name="FEMGrid.java" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FEMGrid.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state vertical-scroll-proportion="0.4028436">
-                        <caret line="71" column="2" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
+                      <state vertical-scroll-proportion="0.23696682">
+                        <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -63,17 +63,17 @@
     <favorites_list name="FEMThermalSolver2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5593705">
+    <splitter split-orientation="horizontal" split-proportion="0.52217454">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="FiniteElementsGrid.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2525773">
-                  <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+                <state vertical-scroll-proportion="0.45876288">
+                  <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
                   <folding>
-                    <element signature="e#3762#3763#0" expanded="true" />
-                    <element signature="e#3793#3794#0" expanded="true" />
+                    <element signature="e#5046#5047#0" expanded="true" />
+                    <element signature="e#5077#5078#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -83,11 +83,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.8015464">
+                  <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
                   <folding>
                     <element signature="e#718#724#0" expanded="true" />
                     <element signature="e#915#930#0" expanded="true" />
@@ -96,10 +96,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FiniteElement.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="FiniteElement.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="2.1829896">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
                   <folding>
                     <element signature="e#4213#4214#0" expanded="true" />
@@ -688,12 +688,12 @@
       <updated>1452766903003</updated>
       <workItem from="1452766905643" duration="5369000" />
       <workItem from="1453107375277" duration="92000" />
-      <workItem from="1453240590343" duration="18733000" />
+      <workItem from="1453240590343" duration="19719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24194000" />
+    <option name="totallyTimeSpent" value="25180000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -739,14 +739,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
@@ -809,17 +801,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FEMGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4028436">
-          <caret line="71" column="2" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1829896">
+        <state vertical-scroll-proportion="0.0">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding>
             <element signature="e#4213#4214#0" expanded="true" />
@@ -834,10 +818,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FEMGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23696682">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8015464">
+          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
           <folding>
             <element signature="e#718#724#0" expanded="true" />
             <element signature="e#915#930#0" expanded="true" />
@@ -847,11 +839,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2525773">
-          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.45876288">
+          <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
           <folding>
-            <element signature="e#3762#3763#0" expanded="true" />
-            <element signature="e#3793#3794#0" expanded="true" />
+            <element signature="e#5046#5047#0" expanded="true" />
+            <element signature="e#5077#5078#0" expanded="true" />
           </folding>
         </state>
       </provider>

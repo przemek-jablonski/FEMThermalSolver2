@@ -56,7 +56,6 @@ public class FiniteElementsGrid {
     public void generateGlobalMatrix() {
         instantiateGlobalMatrix();
 
-        printMatrix();
         for (int e =0; e < elements.size(); ++e) {
 
             kGlobalMatrix[e][e] += elements.get(e).getkLocalMatrix()[0][0];
@@ -72,7 +71,6 @@ public class FiniteElementsGrid {
     public void generateGlobalVector() {
         instantiateGlobalVector();
 
-        printVector();
         for (int e =0; e < elements.size(); ++e) {
             fGlobalVector[e][0] += elements.get(e).getfLocalVector()[0][0];
             fGlobalVector[e+1][0] += elements.get(e).getfLocalVector()[1][0];
@@ -81,6 +79,42 @@ public class FiniteElementsGrid {
         printVector();
 
     }
+
+
+
+    public void calculateTemperatures() {
+        float[] temperatures = new float[elements.size()+1];
+        float[] tempValue = new float[elements.size()+1];
+        int iterationCount = 100000;
+
+        /**
+         * calculation arrays instantiation
+         */
+        for (int i=0; i < elements.size()+1; ++i) {
+            temperatures[i] = 0;
+            tempValue[i] = 0;
+        }
+
+
+        while(iterationCount > 0) {
+
+            for (int i=0; i < elements.size()+1; ++i) {
+                tempValue[i]=(fGlobalVector[i][0] / kGlobalMatrix[i][i]);
+                for (int j=0; j < elements.size()+1; ++j) {
+                    if (i == j) continue;
+                    tempValue[i] = tempValue[i] - ((kGlobalMatrix[i][j] / kGlobalMatrix[i][i]) * temperatures[j]);
+                    temperatures[i] = tempValue[i];
+                }
+            }
+
+            --iterationCount;
+        }
+
+        printTemperatures(temperatures, "TEMPERATURES:");
+
+    }
+
+
 
 
 
@@ -105,6 +139,17 @@ public class FiniteElementsGrid {
 
     public void printVector() { print(fGlobalVector, "GLOBAL VECTOR:"); }
 
+    private void printTemperatures(float[] array, String id) {
+        System.out.println("\n" + id);
+        System.out.print("|");
+
+        for (float element : array)
+            if(element == 0) System.out.print("[ " + "00.0000" + " ]");
+            else System.out.print("[ " + element + " ]");
+
+        System.out.println("|");
+        System.out.println("endprint\n\n");
+    }
 
 
     private void print(float[][] array, String id) {
@@ -112,10 +157,8 @@ public class FiniteElementsGrid {
         for(float[] row : array) {
             System.out.print("|");
             for (float element : row)
-            if(element == 0)
-                System.out.print("[ " + "00.0000" + " ]");
-            else
-                System.out.print("[ " + element + " ]");
+            if(element == 0) System.out.print("[ " + "00.0000" + " ]");
+                else System.out.print("[ " + element + " ]");
             System.out.println("|");
         }
         System.out.println("endprint\n\n");

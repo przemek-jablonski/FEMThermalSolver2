@@ -32,7 +32,6 @@ class Main {
         LinkedList<FiniteElement> elements = new LinkedList<FiniteElement>();
         for (int i =0; i < nodes.size()-1; ++i)
             elements.add(new FiniteElement(nodes.get(i), nodes.get(i+1)));
-        //todo dodac warunki brzegowe!
 
 
 
@@ -42,6 +41,8 @@ class Main {
         grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,
                         deltaTime, temperatureStart, alphaAir, temperatureAir);
 
+        grid.generateGlobalMatrix();
+        grid.generateGlobalVector();
 
     }
 

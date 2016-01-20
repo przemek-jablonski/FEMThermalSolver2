@@ -1,5 +1,7 @@
 package com.szparag.fem;
 
+import java.util.LinkedList;
+
 class Main {
 
     private static double      radiusMin = 0;
@@ -31,6 +33,23 @@ class Main {
         FEMGrid.instantiateLocalVector();
         FEMGrid.calculateLocalMatrix();
         FEMGrid.calculateLocalVector();
+
+
+        /**                 */
+
+        Node node1 = new Node();
+        Node node2 = new Node();
+        Node node3 = new Node();
+        Node node4 = new Node();
+
+        FiniteElement element1 = new FiniteElement(node1, node2);
+        FiniteElement element2 = new FiniteElement(node2, node3);
+        FiniteElement element3 = new FiniteElement(node3, node4);
+
+        FiniteElementsGrid grid = new FiniteElementsGrid()
+
+
+
 
     }
 

@@ -38,6 +38,7 @@ public class FiniteElement {
         this.node1 = node1;
         this.node2 = node2;
         matrixesInstantiation();
+        generateCalculationParameters();
     }
 
 
@@ -59,7 +60,7 @@ public class FiniteElement {
      * calculation methods:
      */
 
-    private void generateCalculationParameters() {
+    public void generateCalculationParameters() {
         ksi1 = -0.57735f;
         ksi2 =  0.57735f;
 
@@ -72,6 +73,60 @@ public class FiniteElement {
 
         Nj1 =  (float)(0.5 * (1+ksi1));
         Nj2 =  (float)(0.5 * (1+ksi2));
+    }
+
+
+    public void calculateLocalMatrix(float radiusStart, float deltaRadius, float k, float c, float ro, float deltaTime) {
+        /** for p=1 (point i) */
+        rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaRadius);
+
+        /** for p=2 (point j) */
+        rp2 = Ni2 * radiusStart + Nj2 * (radiusStart + deltaRadius);
+
+        /** calculating cells in local matrix for K-element (kLocalMatrix) */
+        kLocalMatrix[0][0] = ((k/deltaRadius) * ((rp1*w1)+(rp2*w2)))
+                + (((c*ro*deltaRadius)/deltaTime) * ((Ni1*Ni1*rp1*w1)+(Ni2*Ni2*rp2*w2)));
+
+        kLocalMatrix[0][1] = (-(k/deltaRadius) * ((rp1*w1)+(rp2*w2)) )
+                + ( (c*ro*deltaRadius/deltaTime) * ((Ni1*Nj1*rp1*w1)+(Ni2*Nj2*rp2*w2)));
+
+        kLocalMatrix[1][0] = (-(k/deltaRadius) * ((rp1*w1)+(rp2*w2)) )
+                + ( (c*ro*deltaRadius/deltaTime) * ((Ni1*Nj1*rp1*w1)+(Ni2*Nj2*rp2*w2)));
+
+        kLocalMatrix[1][1] = ((k/deltaRadius) * ((rp1*w1)+(rp2*w2)))
+                + ( (c*ro*deltaRadius/deltaTime) * ((Nj1*Nj1*rp1*w1)+(Nj2*Nj2*rp2*w2)));
+
+        print(kLocalMatrix, "localmatrix");
+    }
+
+
+    public void calculateLocalVector(float radiusStart, float deltaRadius, float c, float ro,
+                                     float deltaTime, float temperatureStart) {
+
+        fLocalVector[0][0] = - (c*ro*deltaRadius/deltaTime) * (
+                ((Ni1*temperatureStart+Nj1*temperatureStart)*Ni1*rp1*w1) +
+                        (Ni2*temperatureStart+Nj2*temperatureStart)*Ni2*rp2*w2);
+
+        fLocalVector[1][0] = - (c*ro*deltaRadius/deltaTime) * (
+                ((Ni1*temperatureStart+Nj1*temperatureStart)*Nj1*rp1*w1) +
+                        (Ni2*temperatureStart+Nj2*temperatureStart)*Nj2*rp2*w2);
+
+
+        // fElementVector[1][0] -= (2*alpha*radiusMax*temperatureAir);
+
+        print(fLocalVector, "localvector");
+    }
+
+
+    public void print(float[][] array, String id) {
+        System.out.println("print (" + id + "): ");
+        for(float[] row : array) {
+            System.out.print("|");
+            for (float element : row)
+                System.out.print("[" + element + "]");
+            System.out.println("|");
+        }
+        System.out.println("endprint\n");
     }
 
 

@@ -28,12 +28,12 @@ class Main {
                                 k, ro, c, temperatureStart,
                                 alphaAir, radiusMax, temperatureAir);
 
-
+/**
         FEMGrid.instantiateLocalMatrix();
         FEMGrid.instantiateLocalVector();
         FEMGrid.calculateLocalMatrix();
         FEMGrid.calculateLocalVector();
-
+*/
 
         /**                 */
 
@@ -46,8 +46,14 @@ class Main {
         FiniteElement element2 = new FiniteElement(node2, node3);
         FiniteElement element3 = new FiniteElement(node3, node4);
 
-        FiniteElementsGrid grid = new FiniteElementsGrid()
+        LinkedList<FiniteElement> list = new LinkedList<FiniteElement>();
+        list.add(element1);
+        list.add(element2);
+        list.add(element3);
 
+        FiniteElementsGrid grid = new FiniteElementsGrid(list);
+        grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime);
+        grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro, deltaTime, temperatureStart);
 
 
 

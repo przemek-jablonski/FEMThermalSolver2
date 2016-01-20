@@ -47,7 +47,7 @@ public class FiniteElementsGrid {
                 System.out.println("BOUNDARY CONDITION APPLIED.");
             }
 
-            //element.printMatrix();
+           // element.printMatrix();
             localRadiusStart +=deltaRadius;
         }
     }
@@ -65,7 +65,7 @@ public class FiniteElementsGrid {
                 System.out.println("BOUNDARY CONDITION APPLIED.");
             }
 
-            //element.printVector();
+         //   element.printVector();
             localRadiusStart += deltaRadius;
         }
     }
@@ -82,7 +82,7 @@ public class FiniteElementsGrid {
             kGlobalMatrix[e+1][e+1] += elements.get(e).getkLocalMatrix()[1][1];
         }
 
-        //printMatrix();
+        printMatrix();
     }
 
 
@@ -94,7 +94,7 @@ public class FiniteElementsGrid {
             fGlobalVector[e+1][0] += elements.get(e).getfLocalVector()[1][0];
         }
 
-        //printVector();
+        printVector();
 
     }
 
@@ -115,7 +115,7 @@ public class FiniteElementsGrid {
 
         /**
          * solving system of equations
-         * Gauss-Riedel method
+         * Gauss-Siedel method
          */
         while(iterationCount > 0) {
 

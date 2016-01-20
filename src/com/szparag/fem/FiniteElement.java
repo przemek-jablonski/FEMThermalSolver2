@@ -94,6 +94,7 @@ public class FiniteElement {
 
 
     public void calculateLocalMatrix(float radiusStart, float deltaRadius, float k, float c, float ro, float deltaTime) {
+       instantiateMatrix();
         /** for p=1 (point i) */
         rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaRadius);
 
@@ -118,14 +119,28 @@ public class FiniteElement {
 
     public void calculateLocalVector(float radiusStart, float deltaRadius, float c, float ro,
                                      float deltaTime) {
+        instantiateVector();
+        /** for p=1 (point i) */
+        rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaRadius);
 
-        fLocalVector[0][0] = - (c*ro*deltaRadius/deltaTime) * (
-                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Ni1*rp1*w1) +
-                        (Ni2*node1.getTemperature()+Nj2*node2.getTemperature())*Ni2*rp2*w2);
+        /** for p=2 (point j) */
+        rp2 = Ni2 * radiusStart + Nj2 * (radiusStart + deltaRadius);
 
-        fLocalVector[1][0] = - (c*ro*deltaRadius/deltaTime) * (
-                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Nj1*rp1*w1) +
-                        (Ni2*node1.getTemperature()+Nj2*node2.getTemperature())*Nj2*rp2*w2);
+//        fLocalVector[0][0] = - (c*ro*deltaRadius/deltaTime) * (
+//                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Ni1*rp1*w1) +
+//                        (Ni2*node1.getTemperature()+Nj2*node1.getTemperature())*Ni2*rp2*w2);
+//
+//        fLocalVector[1][0] = - (c*ro*deltaRadius/deltaTime) * (
+//                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Nj1*rp1*w1) +
+//                        (Ni2*node2.getTemperature()+Nj2*node2.getTemperature())*Nj2*rp2*w2);
+
+        
+        fLocalVector[0][0] += (Ni1*node1.getTemperature() + Nj1*node2.getTemperature())*c*ro*deltaRadius*rp1*w1*Ni1/deltaTime;
+        fLocalVector[0][0] += (Ni2*node1.getTemperature() + Nj2*node2.getTemperature())*c*ro*deltaRadius*rp2*w1*Ni1/deltaTime;
+
+        fLocalVector[1][0] += (Ni1*node1.getTemperature() + Nj1*node2.getTemperature())*c*ro*deltaRadius*rp1*w1*Nj1/deltaTime;
+        fLocalVector[1][0] += (Ni2*node1.getTemperature() + Nj2*node2.getTemperature())*c*ro*deltaRadius*rp2*w1*Nj1/deltaTime;
+
 
         if(fLocalVector[0][0] < 0)
             fLocalVector[0][0] = Math.abs(fLocalVector[0][0]);
@@ -140,7 +155,7 @@ public class FiniteElement {
     }
 
     public void addBoundaryConditionsVector(float alpha, float radiusMax, float temperatureAir){
-        fLocalVector[1][0] -= 2*alpha*radiusMax*temperatureAir;
+        fLocalVector[1][0] += 2*alpha*radiusMax*temperatureAir;
     }
 
 

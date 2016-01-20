@@ -28,7 +28,9 @@ public class Node {
     }
 
     public void setTemperature(float temperature) {
-        this.temperature = temperature;
+        this.temperature = 0;
+        float t = temperature;
+        this.temperature = t;
     }
 
     public float getBoundaryCondition1() {

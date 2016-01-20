@@ -5,7 +5,7 @@ import sun.awt.image.ImageWatched;
 import java.util.LinkedList;
 
 class Main {
-
+/*
     private static double      radiusMin = 0;         //meters
     private static double      radiusMax = 0.002;      //meters
     private static double      deltaRadius = 0.0002;
@@ -20,6 +20,22 @@ class Main {
     private static float       c = 1250;            //specific heat for PVC = 1000-1500
     private static float       k = 0.15f;           //thermal conductivity for PVC = 0.12-0.25 @23C
     private static float       ro = 1800;           //for PVC - 1000 up to 1800
+*/
+
+    private static double      radiusMin = 0;         //meters
+    private static double      radiusMax = 0.08;      //meters
+    private static double      deltaRadius = 0.01;
+
+    private static float       alphaAir = 300;
+    private static float       temperatureAir = 200;
+    private static float       temperatureStart = 100;
+
+    private static float       timeMax = 2000;       //seconds
+    private static float       deltaTime = 50;      //seconds
+
+    private static float       c = 700;
+    private static float       k = 25;
+    private static float       ro = 7800;
 
 
 
@@ -70,7 +86,7 @@ class Main {
 
         System.out.println("TIMESTEPS:--------------------------------------------------------");
        // for (int count = 1; count <300; ++count) {
-        for ( int time = (int)(deltaTime); time <= timeMax; time += deltaTime) {
+        for (int time = (int)(deltaTime); time <= timeMax; time += deltaTime) {
             System.out.println("TIMESTEP " + time + " sec. -------------------------------------------------------------");
             grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, (float)radiusMax, k, c, ro, deltaTime, alphaAir);
             grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, (float)radiusMax, c, ro,

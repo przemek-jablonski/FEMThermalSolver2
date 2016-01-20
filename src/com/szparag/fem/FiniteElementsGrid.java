@@ -61,7 +61,7 @@ public class FiniteElementsGrid {
                 System.out.println("BOUNDARY CONDITION APPLIED.");
             }
 
-         //   element.printVector();
+          //  element.printVector();
             localRadiusStart += deltaRadius;
         }
     }
@@ -90,7 +90,7 @@ public class FiniteElementsGrid {
             fGlobalVector[e+1][0] += elements.get(e).getfLocalVector()[1][0];
         }
 
-       // printVector();
+      //  printVector();
 
     }
 

@@ -134,12 +134,12 @@ public class FiniteElement {
 //                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Nj1*rp1*w1) +
 //                        (Ni2*node2.getTemperature()+Nj2*node2.getTemperature())*Nj2*rp2*w2);
 
-        
-        fLocalVector[0][0] += (Ni1*node1.getTemperature() + Nj1*node2.getTemperature())*c*ro*deltaRadius*rp1*w1*Ni1/deltaTime;
-        fLocalVector[0][0] += (Ni2*node1.getTemperature() + Nj2*node2.getTemperature())*c*ro*deltaRadius*rp2*w1*Ni1/deltaTime;
 
-        fLocalVector[1][0] += (Ni1*node1.getTemperature() + Nj1*node2.getTemperature())*c*ro*deltaRadius*rp1*w1*Nj1/deltaTime;
-        fLocalVector[1][0] += (Ni2*node1.getTemperature() + Nj2*node2.getTemperature())*c*ro*deltaRadius*rp2*w1*Nj1/deltaTime;
+        fLocalVector[0][0] += (Ni1*node1.getTemperature()+Nj1*node2.getTemperature()) * c*ro*deltaRadius*rp1*w1*Ni1/deltaTime;
+        fLocalVector[0][0] += (Ni2*node1.getTemperature()+Nj2*node2.getTemperature()) * c*ro*deltaRadius*rp2*w1*Ni1/deltaTime;
+
+        fLocalVector[1][0] += (Ni1*node1.getTemperature()+Nj1*node2.getTemperature()) * c*ro*deltaRadius*rp1*w1*Nj1/deltaTime;
+        fLocalVector[1][0] += (Ni2*node1.getTemperature()+Nj2*node2.getTemperature()) * c*ro*deltaRadius*rp2*w1*Nj1/deltaTime;
 
 
         if(fLocalVector[0][0] < 0)

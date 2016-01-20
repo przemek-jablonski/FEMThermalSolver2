@@ -82,7 +82,7 @@ public class FiniteElementsGrid {
             kGlobalMatrix[e+1][e+1] += elements.get(e).getkLocalMatrix()[1][1];
         }
 
-        printMatrix();
+     //   printMatrix();
     }
 
 
@@ -94,7 +94,7 @@ public class FiniteElementsGrid {
             fGlobalVector[e+1][0] += elements.get(e).getfLocalVector()[1][0];
         }
 
-        printVector();
+       // printVector();
 
     }
 
@@ -169,17 +169,17 @@ public class FiniteElementsGrid {
     public void printVector() { print(fGlobalVector, "GLOBAL VECTOR:"); }
 
     public void printTemperatures(String id) {
-        System.out.println("\n" + id);
+        System.out.println(id);
         System.out.print("|");
 
         for (Node node : nodes) System.out.print("[" + node.getTemperature() + "]");
 
         System.out.println("|");
-        System.out.println("endprint\n\n");
+        System.out.println("endprint\n");
     }
 
     private void print(float[][] array, String id) {
-        System.out.println("\n" + id);
+        System.out.println(id);
 
         for(float[] row : array) {
             System.out.print("|");
@@ -189,7 +189,7 @@ public class FiniteElementsGrid {
             System.out.println("|");
         }
 
-        System.out.println("endprint\n\n");
+        System.out.println("endprint\n");
     }
 
 

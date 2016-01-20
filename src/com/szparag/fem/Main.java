@@ -66,7 +66,7 @@ class Main {
         */
 
         System.out.println("TIMESTEPS:--------------------------------------------------------");
-        for (int count = 1; count <5; ++count) {
+        for (int count = 1; count <300; ++count) {
             System.out.println("TIMESTEP " + "count" + ". -------------------------------------------------------------");
             grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime, alphaAir);
             grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,

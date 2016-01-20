@@ -21,12 +21,18 @@ public class FiniteElementsGrid {
      */
     private float[][]   kGlobalMatrix;
     private float[][]   fGlobalVector;
+    private float[]     temperatures;
 
 
     public FiniteElementsGrid(LinkedList<FiniteElement> list, float radiusMax, float deltaRadius) {
         this.elements = list;
     }
 
+
+
+    /**
+     * calculation methods
+     */
 
     public void calculateLocalMatrixes(float radiusStart, float deltaRadius, float k, float c, float ro,
                                        float deltaTime, float alpha) {
@@ -35,7 +41,7 @@ public class FiniteElementsGrid {
             element.calculateLocalMatrix(localRadiusStart, deltaRadius, k, c, ro, deltaTime);
             if(elements.getLast() == element) element.addBoundaryConditionsMatrix(alpha, radiusMax);
 
-            element.printMatrix();
+           // element.printMatrix();
             localRadiusStart +=deltaRadius;
         }
     }
@@ -48,10 +54,11 @@ public class FiniteElementsGrid {
             element.calculateLocalVector(localRadiusStart, deltaRadius, c, ro, deltaTime, temperatureStart);
             if (elements.getLast() == element) element.addBoundaryConditionsVector(alpha, radiusMax, temperatureAir);
 
-            element.printVector();
+           // element.printVector();
             localRadiusStart += deltaRadius;
         }
     }
+
 
     public void generateGlobalMatrix() {
         instantiateGlobalMatrix();
@@ -76,14 +83,13 @@ public class FiniteElementsGrid {
             fGlobalVector[e+1][0] += elements.get(e).getfLocalVector()[1][0];
         }
 
-        printVector();
+       // printVector();
 
     }
 
 
-
     public void calculateTemperatures() {
-        float[] temperatures = new float[elements.size()+1];
+        temperatures = new float[elements.size()+1];
         float[] tempValue = new float[elements.size()+1];
         int iterationCount = 100000;
 
@@ -96,6 +102,10 @@ public class FiniteElementsGrid {
         }
 
 
+        /**
+         * solving system of equations
+         * Gauss-Riedel method
+         */
         while(iterationCount > 0) {
 
             for (int i=0; i < elements.size()+1; ++i) {
@@ -135,6 +145,10 @@ public class FiniteElementsGrid {
     }
 
 
+    /**
+     * printing methods
+     */
+
     public void printMatrix() { print(kGlobalMatrix, "GLOBAL MATRIX:"); }
 
     public void printVector() { print(fGlobalVector, "GLOBAL VECTOR:"); }
@@ -151,9 +165,9 @@ public class FiniteElementsGrid {
         System.out.println("endprint\n\n");
     }
 
-
     private void print(float[][] array, String id) {
         System.out.println("\n" + id);
+
         for(float[] row : array) {
             System.out.print("|");
             for (float element : row)
@@ -161,11 +175,14 @@ public class FiniteElementsGrid {
                 else System.out.print("[ " + element + " ]");
             System.out.println("|");
         }
+
         System.out.println("endprint\n\n");
     }
 
 
-
+    /**
+     * accessors
+     */
 
     public LinkedList<FiniteElement> getElements() {
         return elements;

@@ -22,20 +22,27 @@ class Main {
 
     public static void main(String[] args) {
 
-
+        /**
+         * creating nodes
+         */
         LinkedList<Node> nodes = new LinkedList<Node>();
         for (float radius = (float)radiusMin; radius < radiusMax; radius += deltaRadius )
             nodes.add(new Node());
 
-
-
+        /**
+         * creating elements, based on nodes
+         * (here: 1d simplex 2-node elements list
+         */
         LinkedList<FiniteElement> elements = new LinkedList<FiniteElement>();
         for (int i =0; i < nodes.size()-1; ++i)
             elements.add(new FiniteElement(nodes.get(i), nodes.get(i+1)));
 
-
-
+        /**
+         * populate Finite Element Grid with elements and nodes
+         */
         FiniteElementsGrid grid = new FiniteElementsGrid(elements, (float)radiusMax, (float)deltaRadius);
+
+
 
         grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaTime, alphaAir);
         grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,
@@ -44,6 +51,25 @@ class Main {
         grid.generateGlobalMatrix();
         grid.generateGlobalVector();
         grid.calculateTemperatures();
+
+
+        float deltaOfTime = (float)((deltaRadius * deltaRadius) / (0.5 * (k/(c*ro))));
+        float timeSteps = (timeMax / deltaOfTime) +1;
+        deltaOfTime = timeMax / timeSteps;
+
+
+        System.out.println("TIMESTEPS:-----------------");
+        for (int count = 1; count <timeSteps; ++count) {
+            System.out.println("TIMESTEP " + count + ". ------------------------------");
+            grid.calculateLocalMatrixes((float)radiusMin, (float)deltaRadius, k, c, ro, deltaOfTime, alphaAir);
+            grid.calculateLocalVectors((float)radiusMin, (float)deltaRadius, c, ro,
+                    deltaOfTime, temperatureStart, alphaAir, temperatureAir);
+            grid.generateGlobalMatrix();
+            grid.generateGlobalVector();
+            grid.calculateTemperatures();
+
+        }
+
 
     }
 

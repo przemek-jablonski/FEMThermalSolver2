@@ -10,7 +10,8 @@ public class FiniteElementsGrid {
     /**
      * list of elements inside the grid
      */
-    private LinkedList<FiniteElement> elements;
+    private LinkedList<FiniteElement>   elements;
+    private LinkedList<Node>            nodes;
 
 
     private float       radiusMax;
@@ -24,8 +25,9 @@ public class FiniteElementsGrid {
     private float[]     temperatures;
 
 
-    public FiniteElementsGrid(LinkedList<FiniteElement> list, float radiusMax, float deltaRadius) {
-        this.elements = list;
+    public FiniteElementsGrid(LinkedList<FiniteElement> elements, LinkedList<Node> nodes, float radiusMax, float deltaRadius) {
+        this.elements = elements;
+        this.nodes = nodes;
     }
 
 
@@ -38,23 +40,32 @@ public class FiniteElementsGrid {
                                        float deltaTime, float alpha) {
         float localRadiusStart = radiusStart;
         for (FiniteElement element : elements) {
+            element.instantiateMatrix();
             element.calculateLocalMatrix(localRadiusStart, deltaRadius, k, c, ro, deltaTime);
-            if(elements.getLast() == element) element.addBoundaryConditionsMatrix(alpha, radiusMax);
+            if(elements.getLast() == element) {
+                element.addBoundaryConditionsMatrix(alpha, radiusMax);
+                System.out.println("BOUNDARY CONDITION APPLIED.");
+            }
 
-           // element.printMatrix();
+            //element.printMatrix();
             localRadiusStart +=deltaRadius;
         }
     }
 
 
     public void calculateLocalVectors(float radiusStart, float deltaRadius, float c, float ro,
-                                      float deltaTime, float temperatureStart, float alpha, float temperatureAir) {
+                                      float deltaTime, float alpha, float temperatureAir) {
+
         float localRadiusStart = radiusStart;
         for (FiniteElement element : elements) {
-            element.calculateLocalVector(localRadiusStart, deltaRadius, c, ro, deltaTime, temperatureStart);
-            if (elements.getLast() == element) element.addBoundaryConditionsVector(alpha, radiusMax, temperatureAir);
+            element.instantiateVector();
+            element.calculateLocalVector(localRadiusStart, deltaRadius, c, ro, deltaTime);
+            if (elements.getLast() == element){
+                element.addBoundaryConditionsVector(alpha, radiusMax, temperatureAir);
+                System.out.println("BOUNDARY CONDITION APPLIED.");
+            }
 
-           // element.printVector();
+            //element.printVector();
             localRadiusStart += deltaRadius;
         }
     }
@@ -71,7 +82,7 @@ public class FiniteElementsGrid {
             kGlobalMatrix[e+1][e+1] += elements.get(e).getkLocalMatrix()[1][1];
         }
 
-        printMatrix();
+        //printMatrix();
     }
 
 
@@ -83,7 +94,7 @@ public class FiniteElementsGrid {
             fGlobalVector[e+1][0] += elements.get(e).getfLocalVector()[1][0];
         }
 
-       // printVector();
+        //printVector();
 
     }
 
@@ -120,7 +131,11 @@ public class FiniteElementsGrid {
             --iterationCount;
         }
 
-        printTemperatures(temperatures, "TEMPERATURES:");
+        for (int i=0; i < elements.size()+1; ++i) {
+            nodes.get(i).setTemperature(temperatures[i]);
+        }
+
+        printTemperatures("TEMPERATURES:");
 
     }
 
@@ -153,13 +168,11 @@ public class FiniteElementsGrid {
 
     public void printVector() { print(fGlobalVector, "GLOBAL VECTOR:"); }
 
-    private void printTemperatures(float[] array, String id) {
+    public void printTemperatures(String id) {
         System.out.println("\n" + id);
         System.out.print("|");
 
-        for (float element : array)
-            if(element == 0) System.out.print("[ " + "00.0000" + " ]");
-            else System.out.print("[ " + element + " ]");
+        for (Node node : nodes) System.out.print("[" + node.getTemperature() + "]");
 
         System.out.println("|");
         System.out.println("endprint\n\n");

@@ -56,6 +56,24 @@ public class FiniteElement {
 
     }
 
+    public void instantiateMatrix() {
+        kLocalMatrix = new float[2][2];
+
+        for (float[] row: kLocalMatrix)
+            for (float element: row)
+                element = 0;
+
+    }
+
+    public void instantiateVector() {
+        fLocalVector = new float[2][1];
+
+        for (float[] row: fLocalVector)
+            for (float element: row)
+                element = 0;
+
+    }
+
     /**
      * calculation methods:
      */
@@ -99,15 +117,21 @@ public class FiniteElement {
 
 
     public void calculateLocalVector(float radiusStart, float deltaRadius, float c, float ro,
-                                     float deltaTime, float temperatureStart) {
+                                     float deltaTime) {
 
         fLocalVector[0][0] = - (c*ro*deltaRadius/deltaTime) * (
-                ((Ni1*temperatureStart+Nj1*temperatureStart)*Ni1*rp1*w1) +
-                        (Ni2*temperatureStart+Nj2*temperatureStart)*Ni2*rp2*w2);
+                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Ni1*rp1*w1) +
+                        (Ni2*node1.getTemperature()+Nj2*node2.getTemperature())*Ni2*rp2*w2);
 
         fLocalVector[1][0] = - (c*ro*deltaRadius/deltaTime) * (
-                ((Ni1*temperatureStart+Nj1*temperatureStart)*Nj1*rp1*w1) +
-                        (Ni2*temperatureStart+Nj2*temperatureStart)*Nj2*rp2*w2);
+                ((Ni1*node1.getTemperature()+Nj1*node2.getTemperature())*Nj1*rp1*w1) +
+                        (Ni2*node1.getTemperature()+Nj2*node2.getTemperature())*Nj2*rp2*w2);
+
+        if(fLocalVector[0][0] < 0)
+            fLocalVector[0][0] = Math.abs(fLocalVector[0][0]);
+
+        if(fLocalVector[1][0] < 0)
+            fLocalVector[1][0] = Math.abs(fLocalVector[1][0]);
 
     }
 

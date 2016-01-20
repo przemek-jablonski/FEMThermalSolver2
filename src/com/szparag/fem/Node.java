@@ -14,7 +14,7 @@ public class Node {
 
     public Node(float temperature) {
         this.temperature = temperature;
-        this.boundaryCondition1 = -1
+        this.boundaryCondition1 = -1;
     }
 
     public Node() {
@@ -25,6 +25,10 @@ public class Node {
 
     public float getTemperature() {
         return temperature;
+    }
+
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
     }
 
     public float getBoundaryCondition1() {

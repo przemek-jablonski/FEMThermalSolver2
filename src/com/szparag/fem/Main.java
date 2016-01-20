@@ -23,13 +23,14 @@ class Main {
         System.out.println("input data fill:");
 
         FEMGrid FEMGrid = new FEMGrid((int)numberOfElements, (float)radiusMin, deltaRadius, deltaTime,
-                                k, ro, c);
+                                k, ro, c, temperatureStart,
+                                alphaAir, radiusMax, temperatureAir);
 
 
         FEMGrid.instantiateLocalMatrix();
-        FEMGrid.printLocalMatrix();
+        FEMGrid.instantiateLocalVector();
         FEMGrid.calculateLocalMatrix();
-        FEMGrid.printLocalMatrix();
+        FEMGrid.calculateLocalVector();
 
     }
 

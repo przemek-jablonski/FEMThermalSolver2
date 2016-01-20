@@ -40,7 +40,7 @@ public class FiniteElementsGrid {
             element.calculateLocalMatrix(localRadiusStart, deltaRadius, k, c, ro, deltaTime);
             if(elements.getLast() == element) {
                 element.addBoundaryConditionsMatrix(alpha, radiusMax);
-                System.out.println("BOUNDARY CONDITION APPLIED.");
+              //  System.out.println("BOUNDARY CONDITION APPLIED.");
             }
 
            // element.printMatrix();
@@ -171,7 +171,7 @@ public class FiniteElementsGrid {
         for (Node node : nodes) System.out.print("[" + node.getTemperature() + "]");
 
         System.out.println("|");
-        System.out.println("endprint\n");
+        System.out.println(" ");
     }
 
     private void print(float[][] array, String id) {

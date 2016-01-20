@@ -17,6 +17,13 @@ public class FiniteElement {
     private float[][]   fLocalVector;
 
     /**
+     * parameters for varying element material
+     */
+    private float       c;
+    private float       k;
+    private float       ro;
+
+    /**
      * parameters for Gaussian 2-point integral
      */
     private float   ksi1;
@@ -34,11 +41,14 @@ public class FiniteElement {
     private float   Nj1, Nj2;
 
 
-    public FiniteElement(Node node1, Node node2) {
+    public FiniteElement(Node node1, Node node2, float c, float k, float ro) {
         this.node1 = node1;
         this.node2 = node2;
         matrixesInstantiation();
         generateCalculationParameters();
+        this.c = c;
+        this.k = k;
+        this.ro = ro;
     }
 
 
@@ -93,7 +103,7 @@ public class FiniteElement {
     }
 
 
-    public void calculateLocalMatrix(float radiusStart, float deltaRadius, float k, float c, float ro, float deltaTime) {
+    public void calculateLocalMatrix(float radiusStart, float deltaRadius, float deltaTime) {
        instantiateMatrix();
         /** for p=1 (point i) */
         rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaRadius);
@@ -117,8 +127,7 @@ public class FiniteElement {
     }
 
 
-    public void calculateLocalVector(float radiusStart, float deltaRadius, float c, float ro,
-                                     float deltaTime) {
+    public void calculateLocalVector(float radiusStart, float deltaRadius, float deltaTime) {
         instantiateVector();
         /** for p=1 (point i) */
         rp1 = Ni1 * radiusStart + Nj1 * (radiusStart + deltaRadius);
@@ -156,7 +165,7 @@ public class FiniteElement {
 
     public void addBoundaryConditionsVector(float alpha, float radiusMax, float temperatureAir){
         fLocalVector[1][0] += 2*alpha*radiusMax*temperatureAir;
-        System.out.println("BOUNDARY COMDITION VECTOR VALUE: " + (2*alpha*radiusMax*temperatureAir));
+       // System.out.println("BOUNDARY CONDITION VECTOR VALUE: " + (2*alpha*radiusMax*temperatureAir));
     }
 
 

@@ -22,17 +22,17 @@
     <favorites_list name="FEMThermalSolver2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40158615">
+    <splitter split-orientation="horizontal" split-proportion="0.2919971">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="FiniteElementsGrid.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.22865854">
-                  <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+                <state vertical-scroll-proportion="-0.8628049">
+                  <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
                   <folding>
-                    <element signature="e#5589#5590#0" expanded="true" />
-                    <element signature="e#5620#5621#0" expanded="true" />
+                    <element signature="e#5446#5447#0" expanded="true" />
+                    <element signature="e#5477#5478#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -48,6 +48,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="FiniteElement.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="167" column="9" selection-start-line="167" selection-start-column="9" selection-end-line="167" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -55,30 +65,11 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.04099561">
-                  <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.14348462">
+                  <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
                   <folding>
-                    <element signature="e#1675#1681#0" expanded="true" />
-                    <element signature="e#2005#2020#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FiniteElement.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#5707#5708#0" expanded="true" />
-                    <element signature="e#5735#5736#0" expanded="true" />
-                    <element signature="e#5765#5766#0" expanded="true" />
-                    <element signature="e#5793#5794#0" expanded="true" />
-                    <element signature="e#5835#5836#0" expanded="true" />
-                    <element signature="e#5870#5871#0" expanded="true" />
-                    <element signature="e#5912#5913#0" expanded="true" />
-                    <element signature="e#5947#5948#0" expanded="true" />
+                    <element signature="e#2067#2073#0" expanded="true" />
+                    <element signature="e#2397#2412#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -633,6 +624,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="265d303e-d56c-4494-bb3a-d96c367a6d9e" name="Default" comment="" />
@@ -641,12 +635,12 @@
       <updated>1452766903003</updated>
       <workItem from="1452766905643" duration="5369000" />
       <workItem from="1453107375277" duration="92000" />
-      <workItem from="1453240590343" duration="34468000" />
+      <workItem from="1453240590343" duration="39490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39929000" />
+    <option name="totallyTimeSpent" value="44951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,7 +662,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.8681319" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.87623066" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.19010727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -678,7 +672,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3945885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70464134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -686,6 +680,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -706,8 +708,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
-            <element signature="e#1675#1681#0" expanded="true" />
-            <element signature="e#2005#2020#0" expanded="true" />
+            <element signature="e#2067#2073#0" expanded="true" />
+            <element signature="e#2397#2412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -717,8 +719,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
-            <element signature="e#1675#1681#0" expanded="true" />
-            <element signature="e#2005#2020#0" expanded="true" />
+            <element signature="e#2067#2073#0" expanded="true" />
+            <element signature="e#2397#2412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -734,38 +736,29 @@
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <element signature="e#5707#5708#0" expanded="true" />
-            <element signature="e#5735#5736#0" expanded="true" />
-            <element signature="e#5765#5766#0" expanded="true" />
-            <element signature="e#5793#5794#0" expanded="true" />
-            <element signature="e#5835#5836#0" expanded="true" />
-            <element signature="e#5870#5871#0" expanded="true" />
-            <element signature="e#5912#5913#0" expanded="true" />
-            <element signature="e#5947#5948#0" expanded="true" />
-          </folding>
+          <caret line="167" column="9" selection-start-line="167" selection-start-column="9" selection-end-line="167" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/FiniteElementsGrid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22865854">
-          <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+        <state vertical-scroll-proportion="-0.8628049">
+          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
           <folding>
-            <element signature="e#5589#5590#0" expanded="true" />
-            <element signature="e#5620#5621#0" expanded="true" />
+            <element signature="e#5446#5447#0" expanded="true" />
+            <element signature="e#5477#5478#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/szparag/fem/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04099561">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.14348462">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding>
-            <element signature="e#1675#1681#0" expanded="true" />
-            <element signature="e#2005#2020#0" expanded="true" />
+            <element signature="e#2067#2073#0" expanded="true" />
+            <element signature="e#2397#2412#0" expanded="true" />
           </folding>
         </state>
       </provider>
